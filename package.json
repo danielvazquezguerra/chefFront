@@ -1,0 +1,19 @@
+{
+  "name": "cheffront",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danielvazquezguerra/chefFront.git"
+  },
+  "author": "Daniel Vazquez Guerra",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/danielvazquezguerra/chefFront/issues"
+  },
+  "homepage": "https://github.com/danielvazquezguerra/chefFront#readme"
+}
