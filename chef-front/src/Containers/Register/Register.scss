@@ -1,0 +1,128 @@
+@import '../../Colors.scss';
+
+.RegisterWrapper {
+
+    display: flex;
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow: hidden;
+
+}
+
+.RegisterBackground {
+
+    position: absolute;
+    top: 0px;
+    background-color: $amber;
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+    padding: 0px;
+    margin: 0px;
+    z-index: -1;
+
+}
+
+.LeftMain {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    height: 100%;
+   
+
+}
+
+.RightMain {
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 50%;
+    height: 100%;
+
+
+}
+
+.LogoMainLeft {
+    
+    width: 70%;
+}
+
+.RegisterHeader {
+    font-family: 'Gotham',sans-serif;
+    font-size: 5em;
+    font-weight: 800;
+    letter-spacing: -3px;
+    color: $xicetic;
+    margin-bottom: 1em;
+}
+
+.FormLogin {
+    font-family: 'Gotham', sans-serif;
+    font-size: 0.8em;
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    height: auto;
+
+    button {
+        width: 40%;
+        font-size: 1.2em;
+        color: $xicetic;
+        font-weight: 900;
+        height: 50px;
+        margin-top: 10px;
+        border-radius: 0px;
+        background-color: $xicetic;
+        background-color: transparent;
+        border: 2px solid $xicetic; 
+        
+    }
+
+    button:hover {
+        width: 60%;
+        font-size: 1em;
+        color: $xicetic;
+        font-weight: 900;
+        margin-top: 10px;
+        border-radius: 0px;
+        background-color: $xicetic;
+        background-color: transparent;
+        border: 2px solid $xicetic; 
+        
+    }
+
+    input {
+        
+        font-weight: 900;
+        width: 80%;
+    }
+}
+
+.ant-form {
+    color: $xicetic;
+    font-size: 0.8em;
+    font-weight: 900;
+    margin: 0px;
+    padding: 0px;
+
+    input {
+        border-radius: 0px;
+        background-color: transparent;
+        border: 0px;
+        border-bottom: 2px solid $xicetic;
+        margin-bottom: 4em;
+    }
+
+    label {
+
+        font-size: 1em;
+        font-weight: 900;
+        letter-spacing: 2px;
+    }
+
+}

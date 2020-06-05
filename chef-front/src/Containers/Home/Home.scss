@@ -6,10 +6,11 @@
     
     display: flex;
     width: 100%;
-    height: 85%;
+    height: 100%;
     margin: 0px;
     padding: 0px;
     overflow: hidden;
+    border: 1px solid white;
 
 }
 
@@ -30,9 +31,11 @@
 .LeftMain {
 
     display: flex;
+    justify-content: flex-start;
     align-items: center;
     width: 50%;
     height: 100%;
+    border: 1px solid white;
 
 }
 
@@ -40,8 +43,6 @@
 
     width: 35%;
     height: auto;
-    margin-left: 10em;
-    margin-bottom: 13em;
    
 }
 
@@ -75,4 +76,10 @@
     width: 20%;
     color: $kelly;
     font-size: 0.9em;
+
+    .ChefName {
+
+        font-size: 1.3em;
+    }
+
 }

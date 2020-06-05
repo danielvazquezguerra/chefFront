@@ -19,7 +19,9 @@ export default function Header() {
             <div className="input-group">
             <input type="text" className="form-control" placeholder="Are you Hungry?" aria-label="Recipient's username" aria-describedby="button-addon2" />
             <div className="input-group-append">
-                <button className="btn btn-outline-secondary" type="button" id="button-addon2">Search</button>
+
+                <a href="/#"><i class="fas fa-search"></i></a>
+
             </div>
             </div>
 
