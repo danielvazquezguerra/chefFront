@@ -10,11 +10,21 @@
 
 .input-group {
 
-    width: 20%;
+    width: 30%;
+    ::placeholder {
+        color: $sinopia;
+        font-size: 1em;
+      }
     
     .form-control {
         
-        background-color: $lemon;
+        background-color: transparent;
+        border: 0px;
+        color: $sinopia;
+        font-size: 1em;
+        border-bottom: 2px solid $sinopia;
+        border-radius: 0px;
+
     }
 }
 
@@ -32,17 +42,18 @@
 
 .AvatarHeader {
 
-    width: 20%;
+    width: 30%;
     height: 100%;
-    padding-right: 5em;
+    padding-right: 4em;
 
 
     .UserNameHeader {
 
         font-family: 'Gotham', sans-serif;
+        font-size: 1.5em;
         font-weight: 700;
-        color: white;
-        padding-right: 1em;
+        color: $kelly;
+        padding-right: 0.7em;
         margin: 0px;
     }
 }

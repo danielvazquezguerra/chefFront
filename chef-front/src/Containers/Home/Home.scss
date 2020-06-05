@@ -60,8 +60,19 @@
         font-size: 12em;
         line-height: 0.8em;
         font-weight: 800;
-        width: 90%;
+        width: 80%;
         margin-top: 0.2em;
     
     }
+}
+
+.ReviewText {
+    position: absolute;
+    font-family: 'Gotham', sans-serif;
+    text-align: right;
+    bottom: 7em;
+    right: 4em;
+    width: 20%;
+    color: $kelly;
+    font-size: 0.9em;
 }
