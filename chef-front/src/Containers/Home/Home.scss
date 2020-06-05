@@ -4,6 +4,7 @@
 .HomeWrapper {
 
     
+    display: flex;
     width: 100%;
     height: 85%;
     margin: 0px;
@@ -11,9 +12,6 @@
     overflow: hidden;
 
 }
-
-
-
 
 .HomeBackground {
 
@@ -35,7 +33,6 @@
     align-items: center;
     width: 50%;
     height: 100%;
-    border: 1px solid white;
 
 }
 
@@ -53,12 +50,18 @@
     display: flex;
     width: 50%;
     height: 100%;
-    border: 1px solid yellow;
 
     .AreYouHungry {
         
         font-family: 'Gotham', sans-serif;
+        -webkit-text-stroke-width: 2px;
+        color: transparent;
+        -webkit-text-stroke-color: $sinopia;
+        font-size: 12em;
+        line-height: 0.8em;
         font-weight: 800;
+        width: 90%;
+        margin-top: 0.2em;
     
     }
 }

@@ -18,7 +18,8 @@ export default function Home() {
 
             <div className="RightMain">
 
-            <h3 className="AreYouHungry">ARE YOU HUNGRY?</h3>
+            hola
+            <h3 className="AreYouHungry">ARE YOU HUNGRY ?</h3>
 
             </div>
 
