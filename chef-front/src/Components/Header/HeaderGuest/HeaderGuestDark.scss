@@ -12,7 +12,7 @@
 
     width: 30%;
     ::placeholder {
-        color: $sinopia;
+        color: $xicetic;
         font-size: 1em;
       }
     
@@ -20,9 +20,9 @@
         
         background-color: transparent;
         border: 0px;
-        color: $sinopia;
+        color: $xicetic;
         font-size: 1em;
-        border-bottom: 2px solid $sinopia;
+        border-bottom: 2px solid $xicetic;
         border-radius: 0px;
 
     }
@@ -34,7 +34,7 @@
 
     .LogoImg {
 
-        width: 80%;
+        width: 90%;
         padding-left: 4em;
         fill: $sinopia;
 
@@ -60,7 +60,7 @@
 }
 
 .fas {
-    color: $sinopia;
+    color: $xicetic;
     font-size: 1.5em;
 }
 
@@ -69,7 +69,7 @@
     
     all: unset;
     font-family: 'Gotham', sans-serif;
-    color: $amber;
+    color: $xicetic;
     font-weight: 800;
     font-size: 1em;
     padding-left: 1em;
@@ -84,7 +84,7 @@
     all: unset;
     cursor: pointer;
     font-family: 'Gotham', sans-serif;
-    color: $amber;
+    color: $xicetic;
     font-weight: 800;
     font-size: 2em;
     transition: $transition;
