@@ -1,7 +1,7 @@
 import React from 'react';
 import './Register.scss';
 import FormRegister from '../FormRegister/FormRegister';
-
+// import FormLogin from '../Login//FormLogin';
 
 export default function Register() {
 
@@ -20,6 +20,7 @@ export default function Register() {
             <div className="RightMainRegister">
 
                 <FormRegister />
+                {/* <FormLogin /> */}
                 
                 <div className="RegisterHelp">
 

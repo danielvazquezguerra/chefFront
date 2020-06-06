@@ -1,5 +1,6 @@
 import React from 'react';
 import { Form, Input, Button, notification } from 'antd';
+import './FormRegister.scss';
 import { useHistory } from 'react-router-dom';
 import axios from 'axios';
 import {API_URL} from '../../api-config';
