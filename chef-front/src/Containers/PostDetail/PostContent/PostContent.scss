@@ -102,27 +102,12 @@
 }
 
 
-.BlankSpace {
-    display: flex;
-    width: 20%;
-    height: 100%;
-
-}
-
 .PostTitleBox {
 
     display: flex;
+    align-items: center;
     width: 100%;
     height: 50px;
-    border: 1px solid black;
-
-    .TitleBox {
-
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-        width: 80%;
-        height: 100%;
 
         .PostTitle {
     
@@ -133,8 +118,37 @@
             margin: 0px;
 
         }
-    }
 
+}
+
+.RecipesDetails {
+
+    display: flex;
+    width: 100%;
+    height: 50px;
+    font-family: 'Gotham', sans-serif;
+    color: $amber;
+
+    .RecipeDet {
+
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        width: 15%;
+
+        i {
+
+            font-size: 2em;
+            margin-right: 0.3em;
+            color: $amber;
+        }
+
+        p {
+            margin: 0px;
+            font-weight: 800;
+        }
+        
+    }
 
 }
 

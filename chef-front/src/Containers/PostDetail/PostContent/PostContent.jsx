@@ -45,15 +45,36 @@ const PostContent = (props) => {
 
             </section>
 
-            <section className="PostTitleBox">
+                <section className="PostTitleBox">
 
-                <div className="TitleBox">
-                    
                     <h3 className="PostTitle">Brochetas de Pollo con Salsa Cajún</h3>
 
-                </div>
+                </section>
 
-            </section>
+                <section className="RecipesDetails">
+
+                    <div className="RecipeDet Duration">
+
+                        <i class="far fa-clock"></i>
+                        <p>30 MIN</p>
+
+                    </div>
+
+                    <div className="RecipeDet Dificult">
+
+                    <i class="fas fa-mortar-pestle"></i>
+                    <p>EASY</p>
+
+                    </div>
+
+                    <div className="RecipeDet Serves">
+
+                    <i class="fas fa-utensils"></i>
+                    <p>4 SERVES</p>
+
+                    </div>
+
+                </section>
 
 
             </section>
