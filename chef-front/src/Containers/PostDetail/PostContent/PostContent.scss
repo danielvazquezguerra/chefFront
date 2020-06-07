@@ -35,8 +35,10 @@
     .PostInfoBottom {
 
         display: flex;
+        justify-content: space-between;
+        align-items: center;
         width: 100%;
-        height: 100px;
+        height: 80px;
         border: 1px solid black;
 
         .BlankSpace {
@@ -45,6 +47,52 @@
             height: 100%;
             border: 1px solid black;
         }
+
+
+        .PostInfoFoot {
+
+            display: flex;
+            justify-content: space-between;
+            font-family: 'Gotham', sans-serif;
+            font-weight: 800;
+            align-items: center;
+            padding-right: 2em;
+            width: 80%;
+            height: 100%;
+
+
+            .LikesBox {
+
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                width: 20%;
+                height: 100%;
+                margin-left: 1em;
+                border: 1px solid black;
+
+                .HeartLike {
+
+                    font-size: 2em;
+                    margin-top: 0px;
+                }
+
+                .LikesCount {
+
+                    color: $xicetic;
+                    font-size: 1.5em;
+                    margin: 0px;
+                    margin-left: 0.3em;
+
+                }
+
+            }
+
+            .RecipeButton {
+                
+            }
+        }
+
 
     }
 

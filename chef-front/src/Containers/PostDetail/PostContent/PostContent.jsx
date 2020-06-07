@@ -1,5 +1,6 @@
 import React from 'react';
 import './PostContent.scss';
+import { HeartOutlined } from '@ant-design/icons';
 
 const PostContent = (props) => {
 
@@ -29,7 +30,18 @@ const PostContent = (props) => {
 
                 <div className="PostInfoFoot">
 
-                    
+                    <div className="LikesBox">
+
+                    <HeartOutlined className="HeartLike"/>
+                    <p className="LikesCount">45</p>
+
+                    </div>
+
+                    <div className="RecipeBottom">
+
+                        <a href="/#">RECIPE</a>
+
+                    </div>
 
                 </div>
 
