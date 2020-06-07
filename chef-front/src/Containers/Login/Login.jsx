@@ -1,8 +1,8 @@
 import React from 'react';
-import './Register.scss';
+import './Login.scss';
 import { Form, Input, Button, notification } from 'antd';
 import { useHistory } from 'react-router-dom';
-import axios from 'axios';
+import { login } from '../../redux/actions/actions';
 
 
 
@@ -15,17 +15,16 @@ const tailLayout = {
     wrapperCol: { offset: 8, span: 16 },
 }
 
-const Register =() =>{
-
-    const history = useHistory();
+const Login = () => {
+    const history = useHistory();//props.history
     const onFinish = user => {
-        axios.post('http://localhost:8000/api/users/register', user)
-            .then(() => {
-                notification.success({ message: 'Keep on Rollin`, baby!' });
-                history.push('/login')
+        login(user)
+            .then(()=>{//como subscribe en angular
+                notification.success({ message: 'Usuario conectado éxito' });
+                history.push('/')//this.router.navigate(['/login]) en angular
             })
             .catch(console.error)
-    }
+    };
 
 
 
@@ -51,12 +50,7 @@ const Register =() =>{
     {...layout}
     onFinish={onFinish}
     onFinishFailed={console.error} >
-    <Form.Item
-        label="NAME"
-        name="name"
-    >
-        <Input />
-    </Form.Item>
+    
     <Form.Item
         label="EMAIL"
         name="email"
@@ -101,4 +95,4 @@ const Register =() =>{
     )
 }
 
-export default Register;
+export default Login;

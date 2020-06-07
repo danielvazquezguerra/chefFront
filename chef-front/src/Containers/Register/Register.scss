@@ -53,3 +53,118 @@
     width: 70%;
 }
 
+@import '../../Colors.scss';
+
+.RegisterHeader {
+    font-family: 'Gotham',sans-serif;
+    font-size: 5em;
+    font-weight: 800;
+    letter-spacing: -3px;
+    color: $xicetic;
+    margin-bottom: 1em;
+}
+
+.FormLogin {
+    font-family: 'Gotham', sans-serif;
+    font-size: 0.8em;
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    height: auto;
+
+    button {
+        width: 40%;
+        font-size: 1em;
+        color: $xicetic;
+        font-weight: 900;
+        height: 50px;
+        margin-top: 10px;
+        border-radius: 0px;
+        background-color: $xicetic;
+        background-color: transparent;
+        border: 2px solid $xicetic;
+        transition: 0.1s cubic-bezier(.66,-0.21,.31,1.36);
+        
+    }
+
+    button:hover {
+        width: 60%;
+        font-size: 1.2em;
+        color: $xicetic;
+        font-weight: 900;
+        margin-top: 10px;
+        border-radius: 0px;
+        background-color: $xicetic;
+        background-color: transparent;
+        border: 2px solid $xicetic;
+        transition: 0.1s cubic-bezier(.66,-0.21,.31,1.36);
+        
+    }
+
+    input {
+        
+        font-weight: 900;
+        width: 80%;
+    }
+}
+
+.ant-form {
+    color: $xicetic;
+    font-size: 0.8em;
+    font-weight: 900;
+    margin: 0px;
+    padding: 0px;
+
+    input {
+        border-radius: 0px;
+        background-color: transparent;
+        border: 0px;
+        border-bottom: 2px solid $xicetic;
+        margin-bottom: 4em;
+    }
+
+    label {
+
+        font-size: 1em;
+        font-weight: 900;
+        letter-spacing: 2px;
+    }
+
+}
+
+.RegisterHelp {
+
+    display: flex;
+    width: 100%;
+
+    ul {
+        margin: 0px;
+        padding: 0px;
+        margin-top: 4em;
+    }
+
+    li {
+
+        
+        display: inline;
+        list-style: none;
+        
+    }
+    
+    a {
+
+        margin: 0px;
+        font-style: unset;
+        margin-right: 3em;
+        font-family: 'Gotham', sans-serif;
+        font-weight: 800;
+        font-size: 0.8em;;
+        color: $xicetic;
+
+    }
+
+    svg {
+        width: 10px;
+    }
+
+}

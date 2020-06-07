@@ -4,6 +4,8 @@ import './App.scss';
 import Home from './Containers/Home/Home';
 import HeaderMain from './Components/Header/Header';
 import Register from './Containers/Register/Register';
+import Login from './Containers/Login/Login';
+import PostDetail from './Containers/PostDetail/PostDetail';
 
 
 
@@ -26,6 +28,9 @@ function App() {
 
             <Route path="/" component={ Home } exact/>
             <Route path="/register" component={ Register } exact/>
+            <Route path="/login" component={ Login } exact/>
+            <Route path="/postdetail" component={ PostDetail } exact/>
+            
            
           </section>
 

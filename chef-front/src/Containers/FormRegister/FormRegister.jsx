@@ -3,7 +3,7 @@ import { Form, Input, Button, notification } from 'antd';
 import './FormRegister.scss';
 import { useHistory } from 'react-router-dom';
 import axios from 'axios';
-import {API_URL} from '../../api-config';
+// import {API_URL} from '../../api-config';
 
 
 
@@ -15,15 +15,14 @@ const layout = {
 const tailLayout = {
     wrapperCol: { offset: 8, span: 16 },
 }
+const FormRegister =()=> {
 
-export default function FormRegister() {
-
-    const history = useHistory();//props.history
+    const history = useHistory();
     const onFinish = user => {
-        axios.post(API_URL + '/users/register', user)
-            .then(() => {//como subscribe en angular
+        axios.post('http://localhost:8000/api/users/register', user)
+            .then(() => {
                 notification.success({ message: 'Keep on Rollin`, baby!' });
-                history.push('/login')//this.router.navigate(['/login]) en angular
+                history.push('/login')
             })
             .catch(console.error)
     }
@@ -39,8 +38,8 @@ export default function FormRegister() {
     onFinish={onFinish}
     onFinishFailed={console.error} >
     <Form.Item
-        label="USERNAME"
-        name="username"
+        label="NAME"
+        name="name"
     >
         <Input />
     </Form.Item>
@@ -53,9 +52,10 @@ export default function FormRegister() {
     </Form.Item>
 
     <Form.Item
+
         label="PASSWORD"
         name="password"
-        // rules={[{ required: true, message: 'La contraseña es requerida' }]}
+        
     >
 
         <Input.Password />
@@ -71,3 +71,6 @@ export default function FormRegister() {
         </div>
     )
 }
+
+
+export default FormRegister;

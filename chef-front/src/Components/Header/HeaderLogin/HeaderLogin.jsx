@@ -1,10 +1,10 @@
 import React from 'react'
 import './HeaderLogin.scss';
 import Avatar from '../Avatar';
+import { connect } from 'react-redux';
 
 
-
-export default function HeaderLogin() {
+const HeaderLogin =( props ) => {
 
     return (
 
@@ -27,7 +27,8 @@ export default function HeaderLogin() {
 
             <div className="AvatarHeader d-flex align-items-center justify-content-end">
            
-                <p className="UserNameHeader">Daniel Vazquez</p>
+            <p className="UserNameHeader">{(props.user.name).toUpperCase()}</p>
+
                 <Avatar />
     
             </div>
@@ -35,3 +36,8 @@ export default function HeaderLogin() {
 </section>
     )
 }
+
+const mapStateToProps = (state) => ({user: state.user})
+export default connect(mapStateToProps)(HeaderLogin);
+
+

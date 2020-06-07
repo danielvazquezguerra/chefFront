@@ -1,19 +1,30 @@
 import React from 'react'
 import './Header.scss';
-// import HeaderLogin from './HeaderLogin/HeaderLogin';
+import HeaderLogin from './HeaderLogin/HeaderLogin';
 import HeaderGuest from './HeaderGuest/HeaderGuest';
+import { connect } from 'react-redux';
 
 
-
-export default function HeaderMain() {
+const HeaderMain = (props) =>{
 
     return (
 
         <div className="HeaderMain">
 
-            {/* <HeaderLogin /> */}
-            <HeaderGuest />
+        { props.user ?
+            
+            <HeaderLogin />
 
+            :
+
+            <HeaderGuest />  
+
+
+    }
         </div>
     )
 }
+
+const mapStateToProps = (state) => ({user: state.user})
+export default connect(mapStateToProps)(HeaderMain);
+
