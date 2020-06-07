@@ -4,34 +4,44 @@
 .PostContentMain {
 
     display: flex;
-    flex-direction: column;
-    height: 500px;
+    height: auto;
     width: 50%;
-    border: 1px solid black;
     margin-top: 2em;
-    border-top: 1em solid $xicetic;
 
-    .PostContentUp {
+    .PostMainLeft {
+        width: 20%;
+        height: auto;
+    }
 
+    .PostMainRight {
         display: flex;
-        width: 100%;
-        height: 500px;
-        border: 1px solid black;
+        flex-direction: column;
+        width: 80%;
+        height: auto;
+    }
 
         .PostInfoLeft {
         
             display: flex;
             width: 20%;
+            height: auto;
            
         }
     
         .PostPhotoBox {
 
             display: flex;
-            width: 80%;
+            width: 100%;
+
+            .PhotoPost {
+
+                width: 100%;
+                height: auto;
+    
+            }
             
         }
-    }
+    
 
     .PostInfoBottom {
 
@@ -41,15 +51,6 @@
         width: 100%;
         height: 80px;
 
-
-        .BlankSpace {
-            display: flex;
-            width: 20%;
-            height: 100%;
-   
-        }
-
-
         .PostInfoFoot {
 
             display: flex;
@@ -58,7 +59,7 @@
             font-weight: 800;
             align-items: center;
             padding-right: 2em;
-            width: 80%;
+            width: 100%;
             height: 100%;
 
 
@@ -91,11 +92,49 @@
 
             .RecipeButton {
                 
+                all: unset;
             }
         }
 
 
     }
+
+}
+
+
+.BlankSpace {
+    display: flex;
+    width: 20%;
+    height: 100%;
+
+}
+
+.PostTitleBox {
+
+    display: flex;
+    width: 100%;
+    height: 50px;
+    border: 1px solid black;
+
+    .TitleBox {
+
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        width: 80%;
+        height: 100%;
+
+        .PostTitle {
+    
+            font-family: 'Gotham', sans-serif;
+            color: $xicetic;
+            font-size: 1.7em;
+            font-weight: 900;
+            margin: 0px;
+
+        }
+    }
+
 
 }
 

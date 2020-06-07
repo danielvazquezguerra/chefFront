@@ -8,31 +8,29 @@ const PostContent = (props) => {
 
         <section className="PostContentMain"> 
 
-            <section className="PostContentUp">
+            <section className="PostMainLeft">
 
-                <div className="PostInfoLeft">
-
-
-
-                </div>
-
-                <div className="PostPhotoBox">
-
-
-
-                </div>
 
             </section>
 
-            <section className="PostInfoBottom">
 
-                <div className="BlankSpace"></div>
+            <section className="PostMainRight">
+
+
+                <div className="PostPhotoBox">
+
+                    <img className="PhotoPost" src="/images/brochetas.jpg" alt=""/>
+
+                </div>
+
+            <section className="PostInfoBottom">
 
                 <div className="PostInfoFoot">
 
                     <div className="LikesBox">
 
                     <HeartOutlined className="HeartLike"/>
+
                     <p className="LikesCount">45</p>
 
                     </div>
@@ -46,6 +44,20 @@ const PostContent = (props) => {
                 </div>
 
             </section>
+
+            <section className="PostTitleBox">
+
+                <div className="TitleBox">
+                    
+                    <h3 className="PostTitle">Brochetas de Pollo con Salsa Cajún</h3>
+
+                </div>
+
+            </section>
+
+
+            </section>
+
 
         </section>
     )
