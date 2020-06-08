@@ -1,0 +1,74 @@
+@import '../../Colors.scss';
+
+
+.AddPostWrapper {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+
+    .PostRecipeTitle {
+        font-family: 'Gotham', sans-serif;
+        width: 20%;
+        line-height: 0.9em;
+        color: $xicetic;
+        font-weight: 800;
+        font-size: 5em;
+        margin: 1em;
+        text-align: right;
+    }
+    
+}
+
+.PostForm {
+
+    display: flex;
+    font-family: 'Gotham', sans-serif;
+    flex-direction: column;
+    width: 40%;
+    height: auto;
+    margin: 0px;
+
+    .PickerDetails {
+        margin-bottom: 2em;
+    }
+
+    .ant-form {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        text-align: left;
+    }
+
+    input {
+        margin: 0px;
+    }
+
+    .ant-row {
+
+        display: flex;
+        flex-direction: column;
+    }
+
+    .LevelChef {
+
+        width: 50%;
+    }
+
+
+  
+    label::after{
+
+        all: unset;
+
+    }
+
+    .ant-form-item-label {
+
+        text-align: left;
+    }
+}

@@ -6,6 +6,7 @@ import HeaderMain from './Components/Header/Header';
 import Register from './Containers/Register/Register';
 import Login from './Containers/Login/Login';
 import PostDetail from './Containers/PostDetail/PostDetail';
+import AddPost from './Containers/AddPost/AddPost';
 
 
 
@@ -30,6 +31,8 @@ function App() {
             <Route path="/register" component={ Register } exact/>
             <Route path="/login" component={ Login } exact/>
             <Route path="/postdetail" component={ PostDetail } exact/>
+            <Route path="/addpost" component={ AddPost } exact/>
+            
             
            
           </section>

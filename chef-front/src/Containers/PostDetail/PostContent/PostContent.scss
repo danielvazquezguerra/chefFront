@@ -134,7 +134,8 @@
         display: flex;
         justify-content: flex-start;
         align-items: center;
-        width: 15%;
+        width: auto;
+        margin-right: 2em;
 
         i {
 
@@ -145,6 +146,7 @@
 
         p {
             margin: 0px;
+            font-size: 0.8em;
             font-weight: 800;
         }
         
