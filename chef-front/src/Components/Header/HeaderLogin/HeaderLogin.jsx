@@ -1,6 +1,6 @@
 import React from 'react'
 import './HeaderLogin.scss';
-import Avatar from '../Avatar';
+import Avatar from './Avatar';
 import { connect } from 'react-redux';
 
 

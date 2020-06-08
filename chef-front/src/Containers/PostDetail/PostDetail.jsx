@@ -12,9 +12,7 @@ const PostDetail = (props) => {
 
                     <div className="AvatarBox">
 
-                        <div className="AvatarImg">
-
-                        </div>
+                        <img className="AvatarImg" src="/images/daniel_vazquez.jpeg" alt=""/>
 
                     </div>
 

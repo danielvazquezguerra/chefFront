@@ -22,6 +22,7 @@
 }
 
 .AvatarBox {
+    
     display: flex;
     width: 200px;
     height: 200px;
@@ -29,9 +30,10 @@
 }
 
 .AvatarImg {
+
     display: flex;
     width: 100%;
-    height: 100%;
+    height: auto;
     border: 1em solid black;
     border-radius: 50%;
 }

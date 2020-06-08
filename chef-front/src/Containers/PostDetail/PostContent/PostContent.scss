@@ -113,7 +113,7 @@
     
             font-family: 'Gotham', sans-serif;
             color: $xicetic;
-            font-size: 1.7em;
+            font-size: 1.9em;
             font-weight: 900;
             margin: 0px;
 
@@ -150,5 +150,45 @@
         
     }
 
+}
+
+.RecipeIntructions {
+
+    display: flex;
+    font-family: 'Gotham', sans-serif;
+    width: 100%;
+    height: auto;
+    padding-bottom: 3em;
+    margin-top: 1.5em;
+
+
+    .HeaderRecipeIntructions {
+
+        font-family: 'Gohtam', sans-serif;
+        font-size: 1.3em;
+        color: $sinopia;
+        font-weight: 800;
+    }
+
+
+    .Ingredients {
+
+        display: flex;
+        flex-direction: column;
+        color: $sinopia;
+        width: 40%;
+        margin: 0px;
+        padding-right: 1em;
+    }
+
+    .Method {
+
+        display: flex;
+        flex-direction: column;
+        padding-left: 2em;
+        width: 60%;
+        margin: 0px;
+        border-left: 3px solid $sinopia;
+    }
 }
 
