@@ -1,18 +1,11 @@
 import React from 'react';
 import './AddPost.scss';
-import { Form, Input, Button, Upload, message, InputNumber, notification } from 'antd';
-import { Select } from 'antd';
-import { TimePicker } from 'antd';
-import moment from 'moment';
-import { UploadOutlined } from '@ant-design/icons';
+import {  message, notification } from 'antd';
 import axios from 'axios';
 import { useHistory } from 'react-router-dom';
 
 
 
-function onChange(value) {
-    console.log('changed', value);
-  }
 
 const props = {
     name: 'file',
@@ -32,40 +25,37 @@ const props = {
     },
   };
   
-  const validateMessages = {
-         // eslint-disable-next-line
-    required: '${label} is required!',
-    types: {
-        // eslint-disable-next-line
-      email: '${label} is not validate email!',
-        // eslint-disable-next-line
-      number: '${label} is not a validate number!',
-    },
-    number: {
-        // eslint-disable-next-line
-      range: '${label} must be between ${min} and ${max}',
-    },
-  };    
-
-  const { Option } = Select;
-
-  const format = 'HH:mm';
-
-function handleChange(value) {
-  console.log(`selected ${value}`);
-}
 
 
 
 const AddPost = () => {
 
     const history = useHistory();
-    const onFinish = (post, recipe) => {
-        axios.post('http://localhost:8000/api/posts/insert', post)
-        axios.post('http://localhost:8000/api/posts/addrecipe', recipe)
+    const onFinish = (event) => {
+      event.preventDefault();
+      const formData = new FormData();
+      if (event.target.images?.files[0]) formData.set('imagen', event.target.images.files[0]);
+
+          formData.set('title', event.target.title.value)
+          formData.set('ingredients', event.target.ingredients.value)
+          formData.set('method', event.target.method.value)
+          formData.set('serves', event.target.serves.value)
+          formData.set('duration', event.target.duration.value)
+          formData.set('level', event.target.level.value)
+
+        axios.post('http://localhost:8000/api/posts/addrecipe', formData, {
+
+          headers: {
+            authorization:'Bearer ' + localStorage.getItem('authToken')
+        }
+
+        })
+
             .then(() => {
+
                 notification.success({ message: 'Bon Apetit' });
                 history.push('/postsall')
+
             })
             .catch(console.error)
     }
@@ -77,71 +67,50 @@ const AddPost = () => {
 
             <h3 className="PostRecipeTitle">NEW RECIPE</h3>
 
-            <Form className="PostForm" name="nest-messages" onFinish={onFinish} validateMessages={validateMessages}>
-
-                <Form.Item name={['post', 'title']} label="TITLE" rules={[{ required: true }]}>
-                    <Input />
-                </Form.Item>
-
-                <Form.Item name={['recipe', 'ingredients']} label="INGREDIENTS">
-                    <Input.TextArea />
-                </Form.Item>
-
-                <Form.Item name={['recipe', 'method']} label="METHOD">
-                    <Input.TextArea />
-                </Form.Item>
-
-                <Form.Item >
-
-                    <section className="PickerDetails">
-
-                        <p>LEVEL</p>
-                            
-                        <Select className="ItemPicker LevelChef" name={['recipe', 'level']} defaultValue="easy" onChange={handleChange}>
-
-                            <Option value="easy">EASY</Option>
-                            <Option value="medium">MEDIUM</Option>
-                            <Option value="hard">HARD</Option>
-
-                        </Select>
-
-                        <p>DURATION</p>
-
-                        <TimePicker name={['recipe', 'duration']} className="ItemPicker Duration"
-
-                            defaultValue={moment('12:08', format)}
-                            format={format}
-                            
-                        />
-
-                        <p>SERVES</p>
-
-                        <InputNumber className="ItemPicker Serves" name={['recipe', 'serves']} min={1} max={10} defaultValue={3} onChange={onChange} />
-
-                    </section>
 
 
-                <p>IMAGE</p>
+          <form className="PostForm" action="" onSubmit={onFinish}>
 
-                <Upload className="PickerDetails PickerImage" name={['post', 'images']} {...props}>
-                    <Button>
-                    <UploadOutlined /> Click to Upload
-                    </Button>
-                </Upload>
+              <label htmlFor="title">TITLE</label>
+              <input type="text" name="title"/>
+              <label htmlFor="ingredients">INGREDIENTES</label>
+              <textarea type="textarea" name="ingredients"/>
+              <label htmlFor="title">METHOD</label>
+              <textarea type="text" name="method"/>
 
-                <hr/>
+              <div className="ItemDetails">
 
-                    <Button type="primary" htmlType="submit">
-                    ADD POST
-                    </Button>
+              <label htmlFor="title">LEVEL</label>
 
-                </Form.Item>
+                  <select className="ItemPicker" name="level">
+
+                    <option value="easy">EASY</option>
+                    <option value="medium">MEDIUM</option>
+                    <option value="hard">HARD</option>
+
+                  </select>
+
+                  <label htmlFor="title">DURATION</label>
+
+                  <input className="DurationPicker" type="number" name="duration" min="1" /><p>MIN</p>
+
+                  <label htmlFor="title">SERVES</label>
+
+                  <input className="DurationPicker" type="number" name="serves" min="1" /><p>SERVINGS</p>
+
+                  
+
+              </div>
+              
+  
+              <label htmlFor="title">PHOTO</label>
+              <input type="file" name="images"/>
+              <input type="submit"/>
 
 
-
-                    
-
-            </Form>
+          </form>
+          
+          {/* src="http://localhost:8000/images/posts/{{recipe.images}}" */}
 
         </section>
     )

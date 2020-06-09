@@ -6,7 +6,7 @@ import { API_URL } from '../../api-config';
 
 export const login = async(user) => {
     const res = await axios.post('http://localhost:8000/api/users/login', user);
-    localStorage.setItem('authToken', res.data.token); 
+    localStorage.setItem('authToken', res.data.user.token);
     store.dispatch({ 
         type: 'LOGIN',
         payload: res.data.user
