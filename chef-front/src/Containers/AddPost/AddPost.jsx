@@ -1,14 +1,18 @@
 import React from 'react';
 import './AddPost.scss';
-import { Form, Input, Button, Upload, message } from 'antd';
+import { Form, Input, Button, Upload, message, InputNumber, notification } from 'antd';
 import { Select } from 'antd';
 import { TimePicker } from 'antd';
 import moment from 'moment';
 import { UploadOutlined } from '@ant-design/icons';
+import axios from 'axios';
+import { useHistory } from 'react-router-dom';
 
 
 
-
+function onChange(value) {
+    console.log('changed', value);
+  }
 
 const props = {
     name: 'file',
@@ -55,9 +59,17 @@ function handleChange(value) {
 
 const AddPost = () => {
 
-    const onFinish = values => {
-        console.log(values);
-      };
+    const history = useHistory();
+    const onFinish = (post, recipe) => {
+        axios.post('http://localhost:8000/api/posts/insert', post)
+        axios.post('http://localhost:8000/api/posts/addrecipe', recipe)
+            .then(() => {
+                notification.success({ message: 'Bon Apetit' });
+                history.push('/postsall')
+            })
+            .catch(console.error)
+    }
+
 
     return (
 
@@ -67,42 +79,51 @@ const AddPost = () => {
 
             <Form className="PostForm" name="nest-messages" onFinish={onFinish} validateMessages={validateMessages}>
 
-                <Form.Item name={['user', 'title']} label="TITLE" rules={[{ required: true }]}>
+                <Form.Item name={['post', 'title']} label="TITLE" rules={[{ required: true }]}>
                     <Input />
                 </Form.Item>
 
-                <Form.Item name={['user', 'ingredients']} label="INGREDIENTS">
+                <Form.Item name={['recipe', 'ingredients']} label="INGREDIENTS">
                     <Input.TextArea />
                 </Form.Item>
 
-                <Form.Item name={['user', 'method']} label="METHOD">
+                <Form.Item name={['recipe', 'method']} label="METHOD">
                     <Input.TextArea />
                 </Form.Item>
 
                 <Form.Item >
 
-                <p>LEVEL</p>
-                    
-                <Select className="PickerDetails LevelChef" defaultValue="easy" onChange={handleChange}>
+                    <section className="PickerDetails">
 
-                    <Option value="easy">EASY</Option>
-                    <Option value="medium">MEDIUM</Option>
-                    <Option value="hard">HARD</Option>
+                        <p>LEVEL</p>
+                            
+                        <Select className="ItemPicker LevelChef" name={['recipe', 'level']} defaultValue="easy" onChange={handleChange}>
 
-                </Select>
+                            <Option value="easy">EASY</Option>
+                            <Option value="medium">MEDIUM</Option>
+                            <Option value="hard">HARD</Option>
 
-                <p>DURATION</p>
+                        </Select>
 
-                <TimePicker className="PickerDetails Duration"
+                        <p>DURATION</p>
 
-                     defaultValue={moment('12:08', format)}
-                     format={format}
-                     
-                />
+                        <TimePicker name={['recipe', 'duration']} className="ItemPicker Duration"
+
+                            defaultValue={moment('12:08', format)}
+                            format={format}
+                            
+                        />
+
+                        <p>SERVES</p>
+
+                        <InputNumber className="ItemPicker Serves" name={['recipe', 'serves']} min={1} max={10} defaultValue={3} onChange={onChange} />
+
+                    </section>
+
 
                 <p>IMAGE</p>
 
-                <Upload className="PickerDetails PickerImage" {...props}>
+                <Upload className="PickerDetails PickerImage" name={['post', 'images']} {...props}>
                     <Button>
                     <UploadOutlined /> Click to Upload
                     </Button>

@@ -33,7 +33,35 @@
     margin: 0px;
 
     .PickerDetails {
+
+        display: flex;
+        align-items: center;
         margin-bottom: 2em;
+        width: 100%;
+
+        p {
+
+            margin: 0px;
+            margin-right: 1em;
+            
+        }
+
+        .ItemPicker {
+
+            width: 20%;
+            margin-right: 1.3em;
+            transition: 0.1s cubic-bezier(.66,-0.21,.31,1.36);
+
+        }
+
+        .ItemPicker:hover {
+
+            width: 23%;
+            margin-right: 1.3em;
+            border: 0.1em solid $sinopia;
+            transition: 0.1s cubic-bezier(.66,-0.21,.31,1.36);
+        }
+
     }
 
     .ant-form {

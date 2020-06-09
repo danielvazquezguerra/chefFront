@@ -66,13 +66,10 @@ const Register =() =>{
     </Form.Item>
 
     <Form.Item
-
         label="PASSWORD"
         name="password"
-        
     >
-
-        <Input.Password />
+        <Input.Password className="PasswordInput"/>
     </Form.Item>
 
     <Form.Item {...tailLayout}>

@@ -115,6 +115,22 @@
     margin: 0px;
     padding: 0px;
 
+    .ant-input-password {
+
+        display: flex;
+        border-radius: 0px;
+        background-color: transparent;
+        border: 0px;
+        border-bottom: 2px solid $xicetic;
+        margin-bottom: 4em;
+        margin: 0px;
+        height: 3em;
+
+        input {
+            margin: 0px;
+        }
+    }
+
     input {
         border-radius: 0px;
         background-color: transparent;

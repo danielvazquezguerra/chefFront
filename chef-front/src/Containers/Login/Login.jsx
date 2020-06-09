@@ -21,7 +21,7 @@ const Login = () => {
         login(user)
             .then(()=>{//como subscribe en angular
                 notification.success({ message: 'Usuario conectado éxito' });
-                history.push('/')//this.router.navigate(['/login]) en angular
+                history.push('/allpost')//this.router.navigate(['/login]) en angular
             })
             .catch(console.error)
     };
@@ -43,7 +43,7 @@ const Login = () => {
             <div className="RightMainRegister">
 
                 
-<h3 className="RegisterHeader">REGISTER</h3>
+<h3 className="RegisterHeader">SIGN IN</h3>
 
 <Form
     className="FormLogin"

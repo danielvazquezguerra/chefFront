@@ -29,7 +29,7 @@ const PostDetail = (props) => {
 
                     <div className="PostAdd">
 
-                        <a href="/#"><i class="fas fa-plus-circle"></i></a>
+                        <a href="/addpost"><i class="fas fa-plus-circle"></i></a>
 
                     </div>
 

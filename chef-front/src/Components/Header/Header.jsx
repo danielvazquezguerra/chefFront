@@ -11,7 +11,7 @@ const HeaderMain = (props) =>{
 
         <div className="HeaderMain">
 
-        { props.user ?
+        { props ?.user ?
             
             <HeaderLogin />
 
