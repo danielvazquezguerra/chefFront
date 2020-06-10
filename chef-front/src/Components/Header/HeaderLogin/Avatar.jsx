@@ -11,11 +11,10 @@ const Avatar = (props) => {
         
         <div className="Avatar">
 
-         <a href="/#" onClick="">
 
             <img className="AvatarImg" src={AvatarImg} alt="daniel_vazquez"/>
 
-        </a> 
+      
              
         </div>
     )

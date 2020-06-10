@@ -34,7 +34,12 @@ const PostContent = ( { post,user} ) => {
                         <div className="PostInfoFoot">
 
                             <div className="LikesBox">
-{yaTieneLike ? <HeartOutlined className="HeartLike" onClick={ () =>dislikes(post.id,post)}/> :  <HeartOutlined className="HeartLike" onClick={ () =>likes(post.id,post)}/>}
+
+                            {yaTieneLike ? <HeartOutlined className="HeartLikeUnlike" onClick={ () =>dislikes(post.id,post)}/> 
+                            
+                            :  
+                            
+                            <HeartOutlined className="HeartLike" onClick={ () =>likes(post.id,post)}/>}
                            
                             
                                 {console.log(post)}
