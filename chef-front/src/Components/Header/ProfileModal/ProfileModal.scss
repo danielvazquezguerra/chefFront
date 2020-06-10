@@ -74,3 +74,26 @@
     display: none;
 }
 
+.SubmitButton {
+
+    border: 2px solid $amber;
+    width: 50%;
+    height: 40px;
+    background-color: transparent;
+    color: $amber;
+    font-family: 'Gotham', sans-serif;
+    font-weight: 800;
+    transition: $transition;
+
+}
+
+.SubmitButton:hover {
+
+    border: 2px solid $amber;
+    width: 80%;
+    background-color: transparent;
+    color: $amber;
+    font-family: 'Gotham', sans-serif;
+    font-weight: 800;
+    transition: $transition;
+}

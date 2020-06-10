@@ -1,10 +1,24 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import './ProfileModal.scss';
 import { logout } from '../../../redux/actions/actions';
 import { Link } from 'react-router-dom';
+import { addProfilePhoto } from '../../../redux/actions/actions';
+
 
 
 const ProfileModal = (props) => {
+
+   
+
+useEffect(() => {
+   
+   },[]);
+ const handle = event => {
+     event.preventDefault();
+    const formData = new FormData();
+            formData.set('imagen', event.target.imagen.files);
+            addProfilePhoto(formData) 
+}
 
     return (
 
@@ -20,10 +34,17 @@ const ProfileModal = (props) => {
                     </button>
                 </div>
                 <div className="ModalBody modal-body">
-                    <a href="/#">FOTO DE PERFIL</a>
+
+                    <form action="" onSubmit={handle}>
+
+                        <a href="/#">FOTO DE PERFIL</a>
+
+                        <input type="file" name="imagen"/>
+                        <input className="SubmitButton" type="submit" value="ADD PHOTO"/>
+
+                    </form>
+                    
                     <Link  to="/login" onClick={logout}>LOGOUT</Link>
-                </div>
-                <div className="modal-footer">
                 </div>
                 </div>
             </div>

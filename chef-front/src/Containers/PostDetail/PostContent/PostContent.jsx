@@ -6,6 +6,7 @@ import { likes } from '../../../redux/actions/actions';
 const PostContent = ( { post } ) => {
 
     const ImgURL = `http://localhost:8000/images/posts/${post?.images}`;
+    const img = `http://localhost:8000/images/users/${post?.user.imagen}`;
 
     return (
 

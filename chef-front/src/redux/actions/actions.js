@@ -27,11 +27,27 @@ export const login = async(user) => {
         return res;
     }
 
+    export const addProfilePhoto = async(formData) => {
+        try {
+            await axios.post(`http://localhost:8000/api/users/image`, formData, {
+                headers: {
+                    authorization: localStorage.getItem('authToken')
+                }
+            });
+            store.dispatch({
+                type: 'USER_PHOTO'
+            })
+        } catch (error) {
+            console.error(error)
+        }
+     
+    }
+
     export const likes = async(id,recipe) => {
         try {
             const res = await axios.post(`http://localhost:8000/api/posts/like/${id}`,recipe,{
                 headers: {
-                    
+
                     Authorization:'Bearer ' + localStorage.getItem('authToken')
                 }
             })

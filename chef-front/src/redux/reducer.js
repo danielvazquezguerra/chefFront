@@ -26,13 +26,19 @@ const reducer = (state= initialState, action) => {
             ...state,
             user: undefined
         }
+
+        
      
         case 'SEARCH':
             return {
                  ...state,
                   search: action.payload
              }
-    
+
+             case 'USER_FOTO':
+                return {
+                    ...state,
+                }
         ;
 
     default: 
