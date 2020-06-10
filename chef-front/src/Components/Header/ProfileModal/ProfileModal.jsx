@@ -16,7 +16,7 @@ useEffect(() => {
  const handle = event => {
      event.preventDefault();
     const formData = new FormData();
-            formData.set('imagen', event.target.imagen.files);
+            formData.set('img', event.target.imagen.files[0]);
             addProfilePhoto(formData) 
 }
 

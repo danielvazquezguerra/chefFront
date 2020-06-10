@@ -1,7 +1,7 @@
 import React from 'react';
 import './PostContent.scss';
 import { HeartOutlined } from '@ant-design/icons';
-import { likes } from '../../../redux/actions/actions';
+import { likes, dislikes } from '../../../redux/actions/actions';
 
 const PostContent = ( { post } ) => {
 
@@ -34,6 +34,7 @@ const PostContent = ( { post } ) => {
                             <div className="LikesBox">
 
                             <HeartOutlined className="HeartLike" onClick={ () =>likes(post.id,post)}/>
+                            <HeartOutlined className="HeartLike" onClick={ () =>dislikes(post.id,post)}/>
                                 {console.log(post)}
                             <p className='LikesCount d-flex align-items-center m-0'>{post?.likes?.length}</p>
 

@@ -29,9 +29,9 @@ export const login = async(user) => {
 
     export const addProfilePhoto = async(formData) => {
         try {
-            await axios.post(`http://localhost:8000/api/users/image`, formData, {
+            await axios.post(`http://localhost:8000/api/users/userimg`, formData, {
                 headers: {
-                    authorization: localStorage.getItem('authToken')
+                    authorization: 'Bearer ' + localStorage.getItem('authToken')
                 }
             });
             store.dispatch({
@@ -78,5 +78,22 @@ export const login = async(user) => {
             console.error(error)
         }
 
+        
+    }
+    export const dislikes = async(id,post) => {
+        try {
+            const res = await axios.post(`http://localhost:8000/api/posts/dislike/${id}`,post,{
+                headers: {
+                    authorization: localStorage.getItem('authToken')
+                }
+            })
+            store.dispatch({
+                type: 'DISLIKES',
+                posts: res.data
+            })
+        } catch (error) {
+            console.error(error)
+        }
+        getPostAll()
         
     }
