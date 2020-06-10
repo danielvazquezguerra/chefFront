@@ -8,22 +8,50 @@ const PostCard = ({ post }) => {
 
     return (
 
-        <section>
-
             <Link className="RecipeCard" key={post.id} to={'/postdetail/' + post.id }>
 
-                <img className="PostImg" src={ImgURL} alt="" />
+                <div className="ImgBox">
+
+                    <img className="PostImg" src={ImgURL} alt="" />
+
+                </div>
+
 
                 <div className="PostInfo">
+
+                        <h5>{post.title}</h5>
+                       
+                    <div className="PostDetail">
+
+                        <div className="RecipeDet Dificult">
+
+                                <i class="fas fa-mortar-pestle"></i>
+                                <p>{post.level}</p>
+                               
+                                </div>
+
+                        <div className="RecipeDet Duration">
+
+                                <i class="far fa-clock"></i>
+                                <p>{post.time}</p><p>MIN</p>
+                                
+                        </div>
+
+                        <div className="RecipeDet Serves">
+
+                            <i class="fas fa-utensils"></i>
+                            <p>{post.serves}</p>
+
+                        </div>
+
+
+                    </div>
                     
-                    <h5>{post.title}</h5>
-                    <p>{post.level}</p>
             
                 </div>
 
             </Link>
-            
-        </section>
+        
     )
 }
 

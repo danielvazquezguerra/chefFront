@@ -13,15 +13,16 @@ const FormAddPost = () => {
       if (event.target.images?.files[0]) formData.set('images', event.target.images.files[0]);
 
           formData.set('title', event.target.title.value)
-          formData.set('ingredients', event.target.ingredients.value)
-          formData.set('method', event.target.method.value)
           formData.set('serves', event.target.serves.value)
-          formData.set('duration', event.target.duration.value)
+          formData.set('time', event.target.time.value)
+          formData.set('ingredients', event.target.ingredients.value)
           formData.set('level', event.target.level.value)
+          formData.set('method', event.target.method.value)
 
         axios.post('http://localhost:8000/api/posts/addrecipe', formData, {
 
           headers: {
+
             authorization:'Bearer ' + localStorage.getItem('authToken')
         }
 
@@ -63,7 +64,7 @@ const FormAddPost = () => {
 
                         <label htmlFor="title">DURATION</label>
 
-                            <input className="DurationPicker" type="number" name="duration" min="1" /><p>MIN</p>
+                            <input className="DurationPicker" type="number" name="time" min="1" /><p>MIN</p>
 
                         <label htmlFor="title">SERVES</label>
 

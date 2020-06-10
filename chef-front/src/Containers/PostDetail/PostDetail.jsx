@@ -1,8 +1,17 @@
 import React from 'react';
 import './PostDetail.scss';
 import PostContent from './PostContent/PostContent';
+import { useEffect } from 'react';
+import { connect } from 'react-redux';
+import { getPostAll } from '../../redux/actions/actions';
 
 const PostDetail = (props) => {
+
+    useEffect(() => {
+
+        getPostAll()
+        
+    }, [])
 
     return (
      
@@ -35,11 +44,13 @@ const PostDetail = (props) => {
 
                 </div>
 
-                    <PostContent />
+                {props?.posts?.map(post => <PostContent key={post.id} post={post}/>)}
 
             </section>
 
     )
 }
 
-export default PostDetail;
+const mapStateToProps = (state) => ({posts:state?.posts})
+export default connect(mapStateToProps)(PostDetail);
+

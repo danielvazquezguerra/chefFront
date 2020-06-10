@@ -11,13 +11,16 @@ import { getPostAll } from '../../../redux/actions/actions';
 const PostAll = (props) => {
 
     useEffect(() => {
-        getPostAll()
-     }, [])
 
+        getPostAll()
+        
+    }, [])
+    
+    
     return (
 
         <section className="PostAllWrapper">
-
+                
             <section className="GridContainer">
 
                 <section className="GridPosts">

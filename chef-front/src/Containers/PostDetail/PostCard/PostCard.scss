@@ -5,36 +5,75 @@
 .RecipeCard {
 
     width: 100%;
-    height: 400px;
-    border: 1px solid $xicetic;
+    height: 100%;
+
+}
+
+.ImgBox {
+
+    display: flex;
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    
 }
 
 .PostImg {
 
     display: flex;
-    width: 100%;
-    height: 70%;
-    border-bottom: 2px solid black;
-
+    width: auto;
+    height: 100%;
 }
 
 .PostInfo {
 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     width: 100%;
-    height: 30%;
-    padding: 0.8em;
+    height: 120px;
+    padding-top: 1em;
+    padding-right: 1em;
     line-height: 0.9em;
+    font-family: 'Gotham',sans-serif;
+    text-transform: capitalize;
 
     h5 {
-        font-family: 'Gotahm',sans-serif;
-        font-size: 1.2em;
+        
+        font-size: 1.3em;
         font-weight: 900;
+        text-overflow: ellipsis;
+        
+    }
+
+    .PostDetail {
+        display: flex;
+        width: 100%;
+
+    }
+
+}
+
+.RecipeDet {
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: auto;
+    margin-right: 1.4em;
+
+    i {
+        font-size: 1.2em;
+        margin-right: 0.3em;
+        color: $amber;
     }
 
     p {
-        font-weight: 900;
-        color: $xicetic;
-        font-size: 1.1em;
+        margin: 0px;
+        font-size: 0.9em;
+        font-weight: 800;
+        color: $amber;
+        text-transform: uppercase;
     }
-
+    
 }
