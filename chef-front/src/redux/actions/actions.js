@@ -27,6 +27,25 @@ export const login = async(user) => {
         return res;
     }
 
+    export const likes = async(id,recipe) => {
+        try {
+            const res = await axios.post(`http://localhost:8000/api/posts/like/${id}`,recipe,{
+                headers: {
+                    
+                    Authorization:'Bearer ' + localStorage.getItem('authToken')
+                }
+            })
+            store.dispatch({
+                type: 'LIKES',
+                posts: res.data
+            })
+        } catch (error) {
+            console.error(error)
+        }
+
+        getPostAll()
+    }
+
    
     export const getPostAll = async() => {
         try {
@@ -42,4 +61,6 @@ export const login = async(user) => {
         } catch (error) {
             console.error(error)
         }
+
+        
     }

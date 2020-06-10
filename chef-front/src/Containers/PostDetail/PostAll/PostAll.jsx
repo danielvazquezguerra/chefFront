@@ -13,7 +13,7 @@ const PostAll = (props) => {
     useEffect(() => {
 
         getPostAll()
-        
+
     }, [])
     
     
@@ -26,7 +26,7 @@ const PostAll = (props) => {
                 <section className="GridPosts">
 
                  {props?.posts?.map(post => <PostCard key={post.id} post={post}/>)}
-
+      
                 </section>
 
 
@@ -43,6 +43,6 @@ const PostAll = (props) => {
     )
 }
 
-const mapStateToProps = (state) => ({posts:state?.posts})
+const mapStateToProps = (state) => ({posts:state?.posts, user:state?.user})
 export default connect(mapStateToProps)(PostAll);
 

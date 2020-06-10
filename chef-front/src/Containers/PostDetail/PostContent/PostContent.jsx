@@ -1,14 +1,15 @@
 import React from 'react';
 import './PostContent.scss';
 import { HeartOutlined } from '@ant-design/icons';
+import { likes } from '../../../redux/actions/actions';
 
-const PostContent = ( {post} ) => {
+const PostContent = ( { post } ) => {
 
     const ImgURL = `http://localhost:8000/images/posts/${post?.images}`;
 
     return (
 
-        <section className="PostContentMain"> 
+        <section className="PostContentMain" id={post.id}> 
 
             <section className="PostMainLeft">
 
@@ -21,7 +22,7 @@ const PostContent = ( {post} ) => {
 
                         <div className="PostPhotoBox">
 
-                            <img className="PhotoPost" src={ImgURL} alt=""/>
+                            <img className="PhotoPost" src={ ImgURL } alt=""/>
 
                         </div>
 
@@ -31,12 +32,12 @@ const PostContent = ( {post} ) => {
 
                             <div className="LikesBox">
 
-                            <HeartOutlined className="HeartLike"/>
-
-                            <p className="LikesCount">45</p>
+                            <HeartOutlined className="HeartLike" onClick={ () =>likes(post.id,post)}/>
+                                {console.log(post)}
+                            <p className='LikesCount d-flex align-items-center m-0'>{post?.likes?.length}</p>
 
                             </div>
-
+                              
                             <div className="RecipeBottom">
 
             

@@ -1,67 +1,86 @@
 import React from 'react';
+import { notification } from 'antd';
+import axios from 'axios';
+import { useHistory } from 'react-router-dom';
 import './Profile.scss';
-import { Form, Input, Button } from 'antd';
 
+const FormAddPost = () => {
 
-const layout = {
-    labelCol: { span: 8 },
-    wrapperCol: { span: 16 },
-  };
-  
-  const validateMessages = {
-        // eslint-disable-next-line
-    required: '${label} is required!',
-    types: {
-        // eslint-disable-next-line
-      email: '${label} is not validate email!',
-        // eslint-disable-next-line
-      number: '${label} is not a validate number!',
-    },
-    number: {
-        // eslint-disable-next-line
-      range: '${label} must be between ${min} and ${max}',
-    },
-  };
-  
+    const history = useHistory();
+    const onFinish = (event) => {
+      event.preventDefault();
+      const formData = new FormData();
+      if (event.target.imagen?.files[0]) formData.set('imagen', event.target.imagen.files[0]);
 
-const Profile = () => {
+          formData.set('name', event.target.name.value)
+          formData.set('username', event.target.username.value)
+          formData.set('password', event.target.password.value)
+          formData.set('email', event.target.email.value)
 
-    const onFinish = values => {
-        console.log(values);
-      };
-  
+        axios.post('http://localhost:8000/api/posts/addrecipe', formData, {
+
+          headers: {
+
+            authorization:'Bearer ' + localStorage.getItem('authToken')
+        }
+
+        })
+
+            .then(() => {
+
+                notification.success({ message: 'Bon Apetit' });
+                history.push('/allpost')
+
+            })
+            .catch(console.error)
+    }
 
     return (
 
-        <section className="ProfileWrapper">
+        <div className="FormContent">
 
-            <div className="ProfileMain">
+                    <form className="PostForm" action="" onSubmit={onFinish}>
 
-                <h3 className="ProfileHeader">YOUR USER INFO</h3>
+                    <label htmlFor="title">TITLE</label>
+                    <input type="text" name="title"/>
+                    <label htmlFor="ingredients">INGREDIENTES</label>
+                    <textarea type="textarea" name="ingredients"/>
+                    <label htmlFor="title">METHOD</label>
+                    <textarea type="text" name="method"/>
 
-                <Form className="ProfileForm" {...layout} name="nest-messages" onFinish={onFinish} validateMessages={validateMessages}>
-                        <Form.Item name={['user', 'name']} label="NAME" rules={[{ required: true }]}>
-                            <Input />
-                        </Form.Item>
-                        <Form.Item name={['user', 'username']} label="USERNAME" rules={[{ required: true }]}>
-                            <Input />
-                        </Form.Item>
-                        <Form.Item name={['user', 'email']} label="EMAIL" rules={[{ type: 'email' }]}>
-                            <Input />
-                        </Form.Item>
-                       
-                        <Form.Item wrapperCol={{ ...layout.wrapperCol, offset: 8 }}>
-                            <Button type="primary" htmlType="submit">
-                            Submit
-                            </Button>
-                        </Form.Item>
-                </Form>
+                    <div className="ItemDetails">
 
+                        <label htmlFor="title">LEVEL</label>
 
-            </div>
+                            <select className="ItemPicker" name="level">
 
-        </section>
+                                <option value="easy">EASY</option>
+                                <option value="medium">MEDIUM</option>
+                                <option value="hard">HARD</option>
+
+                            </select>
+
+                        <label htmlFor="title">DURATION</label>
+
+                            <input className="DurationPicker" type="number" name="time" min="1" /><p>MIN</p>
+
+                        <label htmlFor="title">SERVES</label>
+
+                            <input className="DurationPicker" type="number" name="serves" min="1" /><p>SERVINGS</p>
+
+                    </div>
+                    
+                        <label htmlFor="title">PHOTO</label>
+
+                        <input className="PhotoButton" type="file" name="images"/>
+
+                        <input className="SubmitButton" type="submit" value="POST"/>
+
+                    </form>
+
+            
+        </div>
     )
 }
 
-    export default Profile;
+export default FormAddPost;

@@ -5,31 +5,37 @@ import { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { getPostAll } from '../../redux/actions/actions';
 
+
+
 const PostDetail = (props) => {
 
-    useEffect(() => {
+    const AvatarImg = `http://localhost:8000/images/users/${props.user?.imagen}`;
 
+    useEffect(() => {
+        
         getPostAll()
         
     }, [])
+    
 
     return (
      
             <section className="PostDetailWrapper">
 
+
                 <div className="HeaderPostDetail">
 
                     <div className="AvatarBox">
 
-                        <img className="AvatarImg" src="/images/daniel_vazquez.jpeg" alt=""/>
-
+                        <img className="AvatarImg" src={AvatarImg} alt=""/>
+                      
                     </div>
 
                     <div className="HeaderProfile">
 
                         <div className="NameBox">
 
-                            <h3 className="NameProfile">Daniel Vazquez</h3>
+                            <h3 className="NameProfile">{props.user?.name}</h3>
                             <p className="FollowInfo">50 followers / 20 followers</p>
 
                         </div>
@@ -51,6 +57,6 @@ const PostDetail = (props) => {
     )
 }
 
-const mapStateToProps = (state) => ({posts:state?.posts})
+const mapStateToProps = (state) => ({posts:state?.posts, user:state?.user})
 export default connect(mapStateToProps)(PostDetail);
 

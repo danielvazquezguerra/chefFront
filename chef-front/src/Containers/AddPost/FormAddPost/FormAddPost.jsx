@@ -3,6 +3,7 @@ import { notification } from 'antd';
 import axios from 'axios';
 import { useHistory } from 'react-router-dom';
 import './FormAddPost.scss';
+import { getPostAll } from '../../../redux/actions/actions';
 
 const FormAddPost = () => {
 
@@ -35,6 +36,14 @@ const FormAddPost = () => {
 
             })
             .catch(console.error)
+            getPostAll()
+            event.target.title.value = "";
+            event.target.ingredients.value = "";
+            event.target.method.value = "";
+            event.target.time.value = "";
+            event.target.serves.value = "";
+            event.target.level.value = "";
+            event.target.images.value = "";
     }
 
     return (

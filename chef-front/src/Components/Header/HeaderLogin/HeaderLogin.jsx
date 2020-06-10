@@ -2,6 +2,7 @@ import React from 'react'
 import './HeaderLogin.scss';
 import Avatar from './Avatar';
 import { connect } from 'react-redux';
+import ProfileModal from '../ProfileModal/ProfileModal';
 
 
 const HeaderLogin =( props ) => {
@@ -12,7 +13,7 @@ const HeaderLogin =( props ) => {
 
             <div className="LogoHeader justify-content-center align-items-center">
                     
-                    <img className="LogoImg" src="/images/chilihot-logo.png" alt="chilihot-logo"/>
+                    <a href="/#"><img className="LogoImg" src="/images/chilihot-logo.png" alt="chilihot-logo"/></a>
 
             </div>
 
@@ -26,8 +27,12 @@ const HeaderLogin =( props ) => {
             </div>
 
             <div className="AvatarHeader d-flex align-items-center justify-content-end">
+
+            <a href="/allpost"><p className="HeaderButtons">RECIPES</p></a>
            
-            <p className="UserNameHeader">{(props.user.name).toUpperCase()}</p>
+            <button className="UserNameHeader" data-toggle="modal" data-target="#staticBackdrop">{(props.user.name).toUpperCase()}</button>
+
+                <ProfileModal />
 
                 <Avatar />
     

@@ -38,6 +38,17 @@
     font-family: 'Gotham',sans-serif;
     text-transform: capitalize;
 
+    .TitleName {
+        display: flex;
+        flex-direction: column;
+
+        p {
+            font-family: 'Gotham', sans-serif;
+            color: $xicetic;
+            
+        }
+    }
+
     h5 {
         
         font-size: 1.3em;

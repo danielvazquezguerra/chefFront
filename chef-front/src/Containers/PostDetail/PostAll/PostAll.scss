@@ -42,3 +42,17 @@
 
 
 }
+
+
+.GridContainer::-webkit-scrollbar {
+    width: 0.7em;
+}
+
+.GridContainer::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 0px rgba(0, 0, 0, 0.3);
+}
+
+.GridContainer::-webkit-scrollbar-thumb {
+    
+    background-color: $amber;
+}

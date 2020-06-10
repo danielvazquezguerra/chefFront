@@ -9,6 +9,7 @@
    height: 100%;
    overflow-y: scroll;
 
+
 }
 
 .HeaderPostDetail {
@@ -76,3 +77,20 @@
         font-size: 3em;
     }
 }
+
+        
+.PostDetailWrapper::-webkit-scrollbar {
+    width: 0.7em;
+}
+
+.PostDetailWrapper::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 0px rgba(0, 0, 0, 0.3);
+}
+
+.PostDetailWrapper::-webkit-scrollbar-thumb {
+    
+    background-color: $amber;
+}
+
+
+

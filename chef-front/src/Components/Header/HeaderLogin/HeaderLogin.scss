@@ -42,9 +42,36 @@
 
 .AvatarHeader {
 
+    display: flex;
+    align-items: center;
     width: 30%;
     height: 100%;
     padding-right: 4em;
+
+    .HeaderButtons {
+
+        color: $amber;
+        font-size: 1em;
+        padding-right: 2em;
+        font-weight: 800;
+        transition: $transition;
+
+    }
+
+    .HeaderButtons:hover {
+
+        color: $amber;
+        font-size: 1.4em;
+        padding-right: 2em;
+        font-weight: 800;
+        transition: $transition;
+
+    }
+
+    p {
+        margin: 0px;
+        font-family: 'Gotham', sans-serif;
+    }
 
 
     .UserNameHeader {
@@ -55,6 +82,8 @@
         color: $amber;
         padding-right: 0.7em;
         margin: 0px;
+        background-color: transparent;
+        border: 0px;
     }
 }
 

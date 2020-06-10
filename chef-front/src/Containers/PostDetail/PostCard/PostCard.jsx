@@ -1,6 +1,7 @@
 import React from 'react';
 import './PostCard.scss';
 import { Link } from 'react-router-dom'
+import { connect } from 'react-redux';
 
 const PostCard = ({ post }) => {
 
@@ -8,19 +9,24 @@ const PostCard = ({ post }) => {
 
     return (
 
-            <Link className="RecipeCard" key={post.id} to={'/postdetail/' + post.id }>
+            <Link className="RecipeCard" key={post.id} to={'/postdetail/'}>
 
                 <div className="ImgBox">
 
-                    <img className="PostImg" src={ImgURL} alt="" />
+                  <img className="PostImg" src={ImgURL} alt="" />
 
                 </div>
 
 
                 <div className="PostInfo">
 
+                    <div className="TitleName">
+
                         <h5>{post.title}</h5>
-                       
+                        <p>por {post.user.name}</p>
+
+                    </div>
+
                     <div className="PostDetail">
 
                         <div className="RecipeDet Dificult">
@@ -55,4 +61,6 @@ const PostCard = ({ post }) => {
     )
 }
 
-export default PostCard;
+const mapStateToProps = (state) => ({user:state?.user})
+export default connect(mapStateToProps)(PostCard);
+
