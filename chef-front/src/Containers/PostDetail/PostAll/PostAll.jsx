@@ -2,15 +2,16 @@ import React from 'react';
 import './PostAll.scss';
 import { useEffect } from 'react';
 import { connect } from 'react-redux';
-import { getPostAll } from '../../../redux/actions/actions';
 import PostCard from '../PostCard/PostCard';
+import FormAddPost from '../../AddPost/FormAddPost/FormAddPost';
+import { getPostAll } from '../../../redux/actions/actions';
+
 
 
 const PostAll = (props) => {
 
     useEffect(() => {
         getPostAll()
-        .catch(console.error)
      }, [])
 
     return (
@@ -19,7 +20,18 @@ const PostAll = (props) => {
 
             <section className="GridContainer">
 
-            {props.posts?.filter(posts=> props.search ? posts.title.includes(props.search):true).map(post => <PostCard key={post._id} product={post}/>)}
+                <section className="GridPosts">
+
+                 {props?.posts?.map(post => <PostCard key={post.id} post={post}/>)}
+
+                </section>
+
+
+            </section>
+
+            <section className="NewPostContainer">
+
+                <FormAddPost />
 
             </section>
             
@@ -28,6 +40,6 @@ const PostAll = (props) => {
     )
 }
 
-const mapStateToProps = (state) => ({posts:state.posts , search:state.search})
-export default connect(mapStateToProps) (PostAll);
+const mapStateToProps = (state) => ({posts:state?.posts})
+export default connect(mapStateToProps)(PostAll);
 

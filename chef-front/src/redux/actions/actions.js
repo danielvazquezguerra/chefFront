@@ -1,6 +1,6 @@
 import axios from 'axios';
 import store from '../store';
-import { API_URL } from '../../api-config';
+
 
 
 
@@ -27,11 +27,19 @@ export const login = async(user) => {
         return res;
     }
 
-    export const getPostAll = () => {
-        return  axios.get(API_URL + 'http://localhost:8000/api/posts/all')
-        .then(res => store.dispatch({
-            type:'GET_ALL_POSTS',
-        payload: res.data
-        }))
-
+   
+    export const getPostAll = async() => {
+        try {
+            const res = await axios.get('http://localhost:8000/api/posts/all',{
+                headers: {
+                    Authorization:'Bearer ' + localStorage.getItem('authToken')
+                }
+            })
+            store.dispatch({
+                type: 'GET_ALL_POSTS',
+                payload: res.data
+            })
+        } catch (error) {
+            console.error(error)
+        }
     }

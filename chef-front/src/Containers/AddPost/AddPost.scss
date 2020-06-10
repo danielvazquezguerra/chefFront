@@ -4,94 +4,41 @@
 .AddPostWrapper {
 
     display: flex;
-    justify-content: center;
-    align-items: center;
     width: 100%;
+    height: 100%;
     margin: 0px;
     padding: 0px;
 
-    .PostRecipeTitle {
-        font-family: 'Gotham', sans-serif;
-        width: 20%;
-        line-height: 0.9em;
-        color: $xicetic;
-        font-weight: 800;
-        font-size: 5em;
-        margin: 1em;
-        text-align: right;
-    }
-    
 }
 
-.PostForm {
+.AddPostLeft {
+    
+    display: flex;
+    width: 50%;
+    height: 100%;
+    justify-content: flex-end;
+    align-items: center;
+
+}
+
+.AddPostRight {
 
     display: flex;
+    width: 50%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.PostRecipeTitle {
+
     font-family: 'Gotham', sans-serif;
-    flex-direction: column;
     width: 40%;
-    height: auto;
+    line-height: 0.9em;
+    color: $xicetic;
+    font-weight: 800;
+    font-size: 6em;
     margin: 0px;
+    text-align: right;
 
-    label {
-        font-family: 'Gotham', sans-serif;
-        font-size: 1em;
-        font-weight: 800;
-    }
-
-    input {
-        font-family: 'Gotham',sans-serif;
-        color: $xicetic;
-        border: 0px;
-        border-bottom: 1px solid $xicetic;
-        margin-bottom: 2em;
-    }
-
-    textarea {
-
-        height: 100px;
-        margin-bottom: 2em;
-    }
-
-    .ItemDetails {
-
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-        width: 100%;
-        height: 50px;
-        margin-bottom: 2em;
-
-        label {
-
-            margin: 0px;
-            margin-right: 1em;
-            margin-left: 1em;
-
-        }
-
-
-        .ItemPicker {
-    
-             width: 15%;
-             border: 0px;
-             margin: 0px;
-             margin-right: 1em;
-             color: $sinopia;
-             font-weight: 800;
-        }
-
-        .DurationPicker {
-            width: 10%;
-            margin: 0px;
-            color: $sinopia;
-            font-weight: 800;
-        }
-
-        p {
-            margin: 0px;
-        }
-        
-    }
-
-    }
-
+}

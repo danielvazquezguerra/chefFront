@@ -20,7 +20,7 @@ const HeaderLogin =( props ) => {
             <input type="text" className="form-control" placeholder="Are you Hungry?" aria-label="Recipient's username" aria-describedby="button-addon2" />
             <div className="input-group-append">
 
-                <a href="/#"><i class="fas fa-search"></i></a>
+                <a href="/#"><i className="fas fa-search"></i></a>
 
             </div>
             </div>
