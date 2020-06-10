@@ -84,7 +84,7 @@ export const login = async(user) => {
         try {
             const res = await axios.post(`http://localhost:8000/api/posts/dislike/${id}`,post,{
                 headers: {
-                    authorization: localStorage.getItem('authToken')
+                    Authorization:'Bearer ' + localStorage.getItem('authToken')
                 }
             })
             store.dispatch({

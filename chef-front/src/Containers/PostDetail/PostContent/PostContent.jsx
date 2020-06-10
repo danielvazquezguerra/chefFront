@@ -2,12 +2,14 @@ import React from 'react';
 import './PostContent.scss';
 import { HeartOutlined } from '@ant-design/icons';
 import { likes, dislikes } from '../../../redux/actions/actions';
-
-const PostContent = ( { post } ) => {
+import { connect } from 'react-redux';
+const PostContent = ( { post,user} ) => {
 
     const ImgURL = `http://localhost:8000/images/posts/${post?.images}`;
     const img = `http://localhost:8000/images/users/${post?.user.imagen}`;
-
+    const likeId = post.likes.map( like => like.user_id)
+    console.log(post.likes)
+    const yaTieneLike = likeId.includes(user.id)
     return (
 
         <section className="PostContentMain" id={post.id}> 
@@ -32,9 +34,9 @@ const PostContent = ( { post } ) => {
                         <div className="PostInfoFoot">
 
                             <div className="LikesBox">
-
-                            <HeartOutlined className="HeartLike" onClick={ () =>likes(post.id,post)}/>
-                            <HeartOutlined className="HeartLike" onClick={ () =>dislikes(post.id,post)}/>
+{yaTieneLike ? <HeartOutlined className="HeartLike" onClick={ () =>dislikes(post.id,post)}/> :  <HeartOutlined className="HeartLike" onClick={ () =>likes(post.id,post)}/>}
+                           
+                            
                                 {console.log(post)}
                             <p className='LikesCount d-flex align-items-center m-0'>{post?.likes?.length}</p>
 
@@ -110,4 +112,5 @@ const PostContent = ( { post } ) => {
     )
 }
 
-export default PostContent;
+const mapStateToProps = (state) => ({user:state?.user})
+export default connect(mapStateToProps)(PostContent);
