@@ -37,14 +37,15 @@ useEffect(() => {
 
                     <form action="" onSubmit={handle}>
 
-                        <a href="/#">FOTO DE PERFIL</a>
+                        <p>FOTO DE PERFIL</p>
 
                         <input type="file" name="imagen"/>
+
                         <input className="SubmitButton" type="submit" value="ADD PHOTO"/>
 
                     </form>
                     
-                    <Link  to="/login" onClick={logout}>LOGOUT</Link>
+                    <Link className="Logout"  to="/login" onClick={logout}>LOGOUT</Link>
                 </div>
                 </div>
             </div>

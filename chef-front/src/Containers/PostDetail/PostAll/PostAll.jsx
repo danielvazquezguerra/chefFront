@@ -25,7 +25,7 @@ const PostAll = (props) => {
 
                 <section className="GridPosts">
 
-                 {props?.posts?.map(post => <PostCard key={post.id} post={post}/>)}
+                 { props.posts?.filter (post => props.search ? post.title.includes(props.search):true).map(post => <PostCard key={post.id} post={post}/>)}
       
                 </section>
 
@@ -43,6 +43,6 @@ const PostAll = (props) => {
     )
 }
 
-const mapStateToProps = (state) => ({posts:state?.posts, user:state?.user})
+const mapStateToProps = (state) => ({posts:state?.posts, user:state?.user, search:state.search })
 export default connect(mapStateToProps)(PostAll);
 

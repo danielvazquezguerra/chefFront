@@ -50,13 +50,13 @@ const PostDetail = (props) => {
 
                 </div>
 
-                {props?.posts?.map(post => <PostContent key={post.id} post={post}/>)}
+                {props.posts?.filter(post => props.search ? post.title.includes(props.search):true).map(post => <PostContent key={post.id} post={post}/>)}
 
             </section>
 
     )
 }
 
-const mapStateToProps = (state) => ({posts:state?.posts, user:state?.user})
+const mapStateToProps = (state) => ({posts:state?.posts, user:state?.user, search:state.search})
 export default connect(mapStateToProps)(PostDetail);
 
