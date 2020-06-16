@@ -25,7 +25,7 @@ const HeaderLogin =( props ) => {
             <input onKeyUp={event => props.dispatch ({type:'SEARCH', payload: event.target.value})} type="text" className="form-control" placeholder="Are you Hungry?" aria-label="Recipient's username" aria-describedby="button-addon2" />
             <div className="input-group-append">
 
-                {/* <a href="/#"><i className="fas fa-search"></i></a> */}
+                <a href="/#"><i className="fas fa-search"></i></a>
 
             </div>
             </div>

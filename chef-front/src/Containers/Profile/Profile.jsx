@@ -17,7 +17,7 @@ const FormAddPost = () => {
           formData.set('password', event.target.password.value)
           formData.set('email', event.target.email.value)
 
-        axios.post('http://localhost:8000/api/posts/addrecipe', formData, {
+        axios.post('http://localhost:8000/api/posts/', formData, {
 
           headers: {
 

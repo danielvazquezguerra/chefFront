@@ -8,6 +8,7 @@ import { getPostAll } from '../../../redux/actions/actions';
 const FormAddPost = () => {
 
     const history = useHistory();
+    
     const onFinish = (event) => {
       event.preventDefault();
       const formData = new FormData();
